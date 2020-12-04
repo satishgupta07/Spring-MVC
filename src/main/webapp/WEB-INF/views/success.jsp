@@ -10,6 +10,7 @@
 <body>
    <h1>${Header}</h1>
     <h5>${Desc}</h5>
+    <h4 style="color: green">${msg}</h4>
     <hr>
       <h3>Welcome, ${user.userName }</h3>
       <h3>Your email Address is ${user.email }</h3>
