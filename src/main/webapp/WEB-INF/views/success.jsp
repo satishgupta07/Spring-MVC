@@ -10,6 +10,7 @@
 <body>
    <h1>${Header}</h1>
     <h5>${Desc}</h5>
+    <hr>
       <h3>Welcome, ${user.userName }</h3>
       <h3>Your email Address is ${user.email }</h3>
       <h3>Your password is ${user.password }</h3>

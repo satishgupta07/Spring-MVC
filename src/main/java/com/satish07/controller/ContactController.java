@@ -12,10 +12,18 @@ import com.satish07.model.User;
 @Controller
 public class ContactController {
 	
-	@RequestMapping("/contact")
-	public String showForm(Model m) {
+	@ModelAttribute
+	public void commonDataForModel(Model m) {
 		m.addAttribute("Header", "Registration Form");
 		m.addAttribute("Desc","Home for Programmer");
+		
+		System.out.println("adding common data to model");
+	}
+	
+	@RequestMapping("/contact")
+	public String showForm(Model m) {
+		System.out.println("Creating Form");
+		
 		return "contact";
 	}
 	
@@ -23,9 +31,6 @@ public class ContactController {
 	public String handleForm(@ModelAttribute User user, Model model) { 
 		
 		System.out.println(user);
-		
-		model.addAttribute("Header", "Registration Form");
-		model.addAttribute("Desc","Home for Programmer");
 		
 		return "success";
 	}
