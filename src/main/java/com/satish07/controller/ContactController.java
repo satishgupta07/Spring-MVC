@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.satish07.model.User;
+
 @Controller
 public class ContactController {
 	
@@ -24,11 +26,20 @@ public class ContactController {
 		System.out.println("User Name : "+userName);
 		System.out.println("User Password : "+password);
 		
+		User user = new User();
+		user.setEmail(email);
+		user.setUserName(userName);
+		user.setPassword(password);
+		
+		System.out.println(user);
+		
 		//process data
 		
-		model.addAttribute("name", userName);
-		model.addAttribute("email", email);
-		model.addAttribute("password", password);
+//		model.addAttribute("name", userName);
+//		model.addAttribute("email", email);
+//		model.addAttribute("password", password);
+		
+		model.addAttribute("user",user);
 		
 		return "success";
 	}
